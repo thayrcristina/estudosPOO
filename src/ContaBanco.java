@@ -9,17 +9,17 @@ public class ContaBanco {
 
 
     //Métodos Personalizados
-    public void abrirConta(String tipoConta) {
-        this.setTipoConta(tipoConta);
-        this.setStatus(true);
-        if (tipoConta.equals("CC")){
+    public void abrirConta(String tC) {
+        this.setTipoConta(tC);
+        this.setStatus(true); // Acessando o atributo pelo Metodo modificador
+        //this.status = "true"; Acesso direto ao atributo
+        if (tC.equals("CC")){
            this.setSaldo(50);
-        } else if (tipoConta.equals("CP")) {
+        } else if (tC.equals("CP")) {
             this.setSaldo(150);
         }
             System.out.println("Conta aberta com sucesso!");
     }
-
 
     public void fecharConta(float saldo) {
         setSaldo(saldo);
@@ -35,16 +35,22 @@ public class ContaBanco {
 
     public void sacar(float v) {
         if (this.getSaldo() >= v) {
-            this.setSaldo(this.getSaldo() - v);
-            System.out.println("Saque realizado na conta de ");
-
+            if (this.getSaldo() >= v) {
+                this.setSaldo(this.getSaldo() - v);
+            System.out.println("Saque realizado na conta de " + this.getCliente());
+        } else {
+            System.out.println("Saldo insuficiente para saque");
+            }
+        } else {
+            System.out.println("Impossível sacar de uma conta fechada!");
         }
     }
 
     public void depositar(float v){
         if (getStatus()){
-            this.setSaldo(this.getSaldo() + v);
-            System.out.println("Depósito realizado!");
+            //this.saldo = this.saldo + v;
+            this.setSaldo(this.getSaldo() + v); //Saldo atual + saldo novo
+            System.out.println("Depósito realizado na conta de " + this.getCliente());
         } else {
             System.out.println("Impossível depositar!");
         }
