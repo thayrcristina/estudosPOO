@@ -9,7 +9,7 @@ public class UltraEmojiCombat {
                 "França", 31, 1.75f, 68.9f,
                 11, 2, 1);
         l[1] = new Lutador("Putscript", "Brasil", 29,
-                1.68f, 57.8f, 14, 2, 3);
+                1.68f, 10.8f, 14, 2, 3);
 
         l[0].status();
         l[1].status();

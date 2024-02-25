@@ -97,17 +97,19 @@ public class Lutador {
     }
 
     private void setCategoria() {
-        if (this.peso < 52.2) {
-            this.categoria = "Inválido!";
-        } else if (this.peso <= 70.3) {
-            this.categoria = "Leve!";
-        } else if (this.peso <= 83.9) {
-            this.categoria = "Médio!";
-        } else if (this.peso <= 120.2) {
-            this.categoria = "Pesado";
-        } else {
-            this.categoria = "Inválido!";
-        }
+//        if (this.peso < 52.2) {
+//            this.categoria = "Inválido!";
+//        } else if (this.peso <= 70.3) {
+//            this.categoria = "Leve!";
+//        } else if (this.peso <= 83.9) {
+//            this.categoria = "Médio!";
+//        } else if (this.peso <= 120.2) {
+//            this.categoria = "Pesado";
+//        } else {
+//            this.categoria = "Inválido!";
+//        }
+        this.categoria = CategoriaEnum.getCategoria(this.peso).getDescricao();
+
     }
 
     public int getVitorias() {
