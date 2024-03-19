@@ -1,3 +1,5 @@
+package conta;
+
 public class DemoPessoa {
 
     public static void main(String[] args) {

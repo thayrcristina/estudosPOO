@@ -1,3 +1,5 @@
+package conta;
+
 public class Pessoa {
 
     String nome;

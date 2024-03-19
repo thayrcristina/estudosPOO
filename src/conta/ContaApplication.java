@@ -1,3 +1,5 @@
+package conta;
+
 public class ContaApplication {
 
     public static void main(String[] args) {
